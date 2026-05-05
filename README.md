@@ -1,87 +1,59 @@
-# Welcome to React Router!
+# MyFood
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Aplicação de cardápio online para um restaurante de culinária variada. Permite visualizar os pratos em destaque na página inicial e navegar pelo cardápio completo com filtro por categoria.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Funcionalidades
 
-## Features
+- Página inicial com hero e destaques da semana
+- Cardápio completo com filtro por categoria (Brasileira, Italiana, Mexicana, Americana, Frutos do Mar)
+- Cards de prato com foto, badge de categoria, avaliação e badge "Destaque da semana"
+- Header fixo com navegação entre páginas
+- Footer com ícones de redes sociais
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Stack
 
-## Getting Started
+| Tecnologia | Versão |
+|---|---|
+| React | ^19.2.4 |
+| React Router | 7.14.0 |
+| styled-components | ^6.1.x |
+| TypeScript | ^5.9.3 |
+| Vite | ^8.0.3 |
 
-### Installation
+## Estrutura de pastas
 
-Install the dependencies:
+```
+src/app/
+├── root.tsx                   # Layout raiz e GlobalStyle
+├── routes.ts                  # Configuração de rotas
+├── data/
+│   └── pratos.ts              # Dados mockados do cardápio
+├── components/
+│   ├── Header.tsx
+│   ├── Header.styles.ts
+│   ├── Footer.tsx
+│   ├── Footer.styles.ts
+│   ├── PratoCard.tsx
+│   └── PratoCard.styles.ts
+└── routes/
+    ├── home.tsx               # Página inicial
+    ├── home.styles.ts
+    ├── cardapio.tsx           # Cardápio completo com filtros
+    └── cardapio.styles.ts
+```
+
+## Como rodar
 
 ```bash
 npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+A aplicação estará disponível em `http://localhost:5173`.
 
-## Building for Production
-
-Create a production build:
+## Build de produção
 
 ```bash
 npm run build
+npm run start
 ```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
