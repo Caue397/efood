@@ -6,7 +6,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { Provider } from "react-redux";
 import { createGlobalStyle } from "styled-components";
+import { store } from "./store";
 import type { Route } from "./+types/root";
 
 const GlobalStyle = createGlobalStyle`
@@ -60,7 +62,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <Provider store={store}>
+      <Outlet />
+    </Provider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

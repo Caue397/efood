@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Footer } from "../components/Footer";
 import { MenuCard } from "../components/MenuCard";
+import { Drawer } from "../components/Drawer";
 import api from "../network/axios";
 import { proxyImg } from "../network/proxyImg";
 import type { Restaurante } from "../types/api";
+import { adicionarItem, abrirDrawer } from "../store/carrinhoSlice";
+import type { RootState, AppDispatch } from "../store";
 import {
   PerfilHeader,
   PerfilHeaderInner,
@@ -40,7 +43,9 @@ export function meta({ data }: Route.MetaArgs) {
 
 export default function RestaurantePerfil({ loaderData }: Route.ComponentProps) {
   const restaurante = loaderData;
-  const [qtdCarrinho, setQtdCarrinho] = useState(0);
+  const dispatch = useDispatch<AppDispatch>();
+  const items = useSelector((s: RootState) => s.carrinho.items);
+  const qtdCarrinho = items.reduce((acc, i) => acc + i.quantidade, 0);
 
   return (
     <>
@@ -50,7 +55,13 @@ export default function RestaurantePerfil({ loaderData }: Route.ComponentProps) 
           <Logo to="/">
             <LogoImage src="/logo.png" alt="efood" />
           </Logo>
-          <CartInfo>{qtdCarrinho} produto(s) no carrinho</CartInfo>
+          <CartInfo
+            as="button"
+            type="button"
+            onClick={() => dispatch(abrirDrawer())}
+          >
+            {qtdCarrinho} produto(s) no carrinho
+          </CartInfo>
         </PerfilHeaderInner>
       </PerfilHeader>
       <main>
@@ -66,13 +77,17 @@ export default function RestaurantePerfil({ loaderData }: Route.ComponentProps) 
               <MenuCard
                 key={item.id}
                 item={item}
-                onAdicionar={() => setQtdCarrinho((q) => q + 1)}
+                onAdicionar={() => {
+                  dispatch(adicionarItem(item));
+                  dispatch(abrirDrawer());
+                }}
               />
             ))}
           </MenuGrid>
         </MenuSection>
       </main>
       <Footer />
+      <Drawer />
     </>
   );
 }

@@ -40,6 +40,11 @@ export const CartInfo = styled.span`
   color: #e66767;
   font-size: 14px;
   font-weight: 600;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
 `;
 
 export const HeroCapa = styled.section<{ $src: string }>`
