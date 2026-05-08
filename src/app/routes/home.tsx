@@ -1,6 +1,7 @@
 import { Footer } from "../components/Footer";
 import { RestauranteCard } from "../components/RestauranteCard";
 import api from "../network/axios";
+import { proxyImg } from "../network/proxyImg";
 import type { Restaurante } from "../types/api";
 import {
   Hero,
@@ -13,7 +14,7 @@ import type { Route } from "./+types/home";
 
 export async function clientLoader() {
   const { data } = await api.get<Restaurante[]>("/restaurantes");
-  return data;
+  return data.map((r) => ({ ...r, capa: proxyImg(r.capa) }));
 }
 
 export function meta({}: Route.MetaArgs) {

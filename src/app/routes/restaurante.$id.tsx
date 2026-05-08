@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Footer } from "../components/Footer";
 import { MenuCard } from "../components/MenuCard";
 import api from "../network/axios";
+import { proxyImg } from "../network/proxyImg";
 import type { Restaurante } from "../types/api";
 import {
   PerfilHeader,
@@ -23,7 +24,14 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
   const { data } = await api.get<Restaurante[]>("/restaurantes");
   const restaurante = data.find((r) => r.id === Number(params.id));
   if (!restaurante) throw new Response("Not Found", { status: 404 });
-  return restaurante;
+  return {
+    ...restaurante,
+    capa: proxyImg(restaurante.capa),
+    cardapio: restaurante.cardapio.map((item) => ({
+      ...item,
+      foto: proxyImg(item.foto),
+    })),
+  };
 }
 
 export function meta({ data }: Route.MetaArgs) {

@@ -1,0 +1,13 @@
+{
+  "outputDirectory": "build/client",
+  "rewrites": [
+    {
+      "source": "/efood-img/:path*",
+      "destination": "https://api-ebac.vercel.app/efood/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
