@@ -95,3 +95,9 @@ export const ErroMsg = styled.p`
   background: rgba(0, 0, 0, 0.15);
   padding: 8px;
 `;
+
+export const ErroField = styled.span`
+  color: #ffbaba;
+  font-size: 12px;
+  margin-top: 2px;
+`;
