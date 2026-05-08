@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styled from "styled-components";
 
 export const Card = styled.article`
@@ -91,14 +92,22 @@ export const Descricao = styled.p`
   margin-top: 10px;
 `;
 
-export const SaibaMaisButton = styled.button`
+export const SaibaMaisLink = styled(Link)`
+  display: inline-block;
   color: #ffffff;
   background: #e66767;
   font-size: 14px;
   margin-top: 15px;
   cursor: pointer;
-  border-color: transparent;
+  border: none;
   text-align: center;
   align-self: flex-start;
   font-family: inherit;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.85;
+  }
 `;

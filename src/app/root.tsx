@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     background-color: #fff8f2;
     color: #4b4b4b;
-    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -36,7 +36,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap",
   },
 ];
 
@@ -82,7 +82,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       style={{
         padding: "80px 24px",
         textAlign: "center",
-        fontFamily: "Inter, sans-serif",
+        fontFamily: "Roboto, sans-serif",
       }}
     >
       <h1 style={{ color: "#e66767", fontSize: "56px", margin: "0 0 16px" }}>

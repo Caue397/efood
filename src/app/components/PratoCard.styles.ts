@@ -103,6 +103,7 @@ export const SaibaMaisButton = styled.button`
   font-weight: 600;
   cursor: pointer;
   text-align: center;
+  font-weight: bold;
   transition: all 0.2s;
   align-self: flex-start;
   font-family: inherit;

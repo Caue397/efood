@@ -11,7 +11,7 @@ import {
   Avaliacao,
   Estrela,
   Descricao,
-  SaibaMaisButton,
+  SaibaMaisLink,
 } from "./RestauranteCard.styles";
 
 interface Props {
@@ -40,7 +40,7 @@ export function RestauranteCard({ restaurante }: Props) {
           </Avaliacao>
         </CardHeader>
         <Descricao>{restaurante.descricao}</Descricao>
-        <SaibaMaisButton type="button">Saiba mais</SaibaMaisButton>
+        <SaibaMaisLink to={`/restaurante/${restaurante.id}`}>Saiba mais</SaibaMaisLink>
       </CardBody>
     </Card>
   );
