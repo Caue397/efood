@@ -26,6 +26,7 @@ export function RestauranteCard({ restaurante }: Props) {
           src={restaurante.capa}
           alt={restaurante.titulo}
           loading="lazy"
+          referrerPolicy="no-referrer"
         />
         {restaurante.destacado && (
           <BadgeDestaque>Destaque da semana</BadgeDestaque>

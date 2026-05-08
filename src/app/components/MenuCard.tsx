@@ -16,7 +16,7 @@ interface Props {
 export function MenuCard({ item, onAdicionar }: Props) {
   return (
     <Card>
-      <CardImage src={item.foto} alt={item.nome} loading="lazy" />
+      <CardImage src={item.foto} alt={item.nome} loading="lazy" referrerPolicy="no-referrer" />
       <CardBody>
         <ItemNome>{item.nome}</ItemNome>
         <Descricao>{item.descricao}</Descricao>
