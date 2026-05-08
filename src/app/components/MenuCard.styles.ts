@@ -41,7 +41,7 @@ export const Descricao = styled.p`
 export const AdicionarButton = styled.button`
   display: inline-block;
   color: #e66767;
-  background: #ffffff;
+  background: #FFEBD9;
   font-size: 14px;
   margin-top: 15px;
   cursor: pointer;

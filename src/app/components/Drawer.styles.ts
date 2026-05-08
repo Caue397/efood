@@ -132,7 +132,7 @@ export const TotalRow = styled.div`
 `;
 
 export const FinalizarButton = styled.button`
-  background: #ffffff;
+  background: #FFEBD9;
   color: #e66767;
   border: none;
   font-size: 14px;

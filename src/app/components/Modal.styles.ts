@@ -55,7 +55,7 @@ export const ModalPorcao = styled.p`
 `;
 
 export const AdicionarButton = styled.button`
-  background: #ffffff;
+  background: #FFEBD9;
   color: #e66767;
   border: none;
   font-size: 14px;
