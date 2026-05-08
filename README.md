@@ -1,4 +1,4 @@
-# MyFood
+# eFood
 
 Aplicação de cardápio online para um restaurante de culinária variada. Permite visualizar os pratos em destaque na página inicial e navegar pelo cardápio completo com filtro por categoria.
 
