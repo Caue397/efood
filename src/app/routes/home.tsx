@@ -18,7 +18,7 @@ export async function clientLoader() {
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "efood — Delivery & Gastronomia" },
+    { title: "eFood — Delivery & Gastronomia" },
     {
       name: "description",
       content: "Viva experiências gastronômicas no conforto da sua casa.",
