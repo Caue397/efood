@@ -1,21 +1,24 @@
-import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { PratoCard } from "../components/PratoCard";
-import { pratos } from "../data/pratos";
+import { RestauranteCard } from "../components/RestauranteCard";
+import api from "../network/axios";
+import type { Restaurante } from "../types/api";
 import {
-  HeroSection,
-  HeroTitle,
-  DestaqueSection,
-  SectionTitle,
-  PratosGrid,
-  CtaSection,
-  CtaButton,
+  Hero,
+  HeroLogo,
+  HeroTitulo,
+  MainSection,
+  RestaurantesGrid,
 } from "./home.styles";
 import type { Route } from "./+types/home";
 
+export async function clientLoader() {
+  const { data } = await api.get<Restaurante[]>("/restaurantes");
+  return data;
+}
+
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "MyFood — Delivery & Gastronomia" },
+    { title: "efood — Delivery & Gastronomia" },
     {
       name: "description",
       content: "Viva experiências gastronômicas no conforto da sua casa.",
@@ -23,33 +26,27 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-const destaques = pratos.filter((p) => p.destaqueSemana);
+export default function Home({ loaderData }: Route.ComponentProps) {
+  const restaurantes = loaderData;
 
-export default function Home() {
   return (
     <>
-      <Header />
       <main>
-        <HeroSection>
-          <HeroTitle>
+        <Hero>
+          <HeroLogo src="/logo.png" alt="efood" />
+          <HeroTitulo>
             Viva experiências gastronômicas
             <br />
             no conforto da sua casa
-          </HeroTitle>
-        </HeroSection>
-
-        <DestaqueSection>
-          <SectionTitle>Destaques da Semana</SectionTitle>
-          <PratosGrid>
-            {destaques.map((prato) => (
-              <PratoCard key={prato.id} prato={prato} />
+          </HeroTitulo>
+        </Hero>
+        <MainSection>
+          <RestaurantesGrid>
+            {restaurantes.map((r) => (
+              <RestauranteCard key={r.id} restaurante={r} />
             ))}
-          </PratosGrid>
-        </DestaqueSection>
-
-        <CtaSection>
-          <CtaButton to="/cardapio">Ver cardápio completo</CtaButton>
-        </CtaSection>
+          </RestaurantesGrid>
+        </MainSection>
       </main>
       <Footer />
     </>

@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    background-color: #fff8f3;
+    background-color: #fff8f2;
     color: #4b4b4b;
     font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;

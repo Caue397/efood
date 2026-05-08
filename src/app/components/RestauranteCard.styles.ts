@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.article`
   background: #ffffff;
-  border: 2px solid #e66767;
-  border-radius: 16px;
+  border: 1px solid #E66767;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -34,7 +33,7 @@ export const BadgeDestaque = styled.span`
   letter-spacing: 0.4px;
 `;
 
-export const BadgeCategoria = styled.span`
+export const BadgeTipo = styled.span`
   position: absolute;
   top: 12px;
   right: 12px;
@@ -47,11 +46,10 @@ export const BadgeCategoria = styled.span`
 `;
 
 export const CardBody = styled.div`
-  padding: 20px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 10px;
 `;
 
 export const CardHeader = styled.div`
@@ -61,10 +59,10 @@ export const CardHeader = styled.div`
   gap: 12px;
 `;
 
-export const PratoNome = styled.h3`
-  font-size: 16px;
+export const NomeRestaurante = styled.h3`
+  font-size: 18px;
   font-weight: 700;
-  color: #4b4b4b;
+  color: #e66767;
   margin: 0;
 `;
 
@@ -74,7 +72,7 @@ export const Avaliacao = styled.div`
   gap: 4px;
   font-size: 14px;
   font-weight: 600;
-  color: #4b4b4b;
+  color: #e66767;
   flex-shrink: 0;
 `;
 
@@ -85,30 +83,22 @@ export const Estrela = styled.span`
 `;
 
 export const Descricao = styled.p`
-  font-size: 13px;
-  color: #9f9f9f;
+  font-size: 12px;
+  color: #e66767;
   line-height: 1.65;
   margin: 0;
   flex: 1;
+  margin-top: 10px;
 `;
 
 export const SaibaMaisButton = styled.button`
-  margin-top: 4px;
-  padding: 10px 24px;
-  border: 1.5px solid #e66767;
-  color: #e66767;
-  background: transparent;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 600;
+  color: #ffffff;
+  background: #e66767;
+  font-size: 14px;
+  margin-top: 15px;
   cursor: pointer;
+  border-color: transparent;
   text-align: center;
-  transition: all 0.2s;
   align-self: flex-start;
   font-family: inherit;
-
-  &:hover {
-    background-color: #e66767;
-    color: #ffffff;
-  }
 `;

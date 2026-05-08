@@ -1,32 +1,12 @@
-import { useLocation } from "react-router";
-import {
-  HeaderWrapper,
-  HeaderInner,
-  Logo,
-  LogoImage,
-  LogoText,
-  Nav,
-  NavLink,
-} from "./Header.styles";
+import { HeaderWrapper, HeaderInner, Logo, LogoImage } from "./Header.styles";
 
 export function Header() {
-  const { pathname } = useLocation();
-
   return (
     <HeaderWrapper>
       <HeaderInner>
         <Logo to="/">
-          <LogoImage src="/icon.png" alt="MyFood" />
-          <LogoText>MyFood</LogoText>
+          <LogoImage src="/logo.png" alt="efood" />
         </Logo>
-        <Nav>
-          <NavLink to="/" $active={pathname === "/"}>
-            Início
-          </NavLink>
-          <NavLink to="/cardapio" $active={pathname === "/cardapio"}>
-            Cardápio
-          </NavLink>
-        </Nav>
       </HeaderInner>
     </HeaderWrapper>
   );

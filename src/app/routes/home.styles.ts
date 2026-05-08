@@ -1,62 +1,43 @@
-import { Link } from "react-router";
 import styled from "styled-components";
 
-export const HeroSection = styled.section`
-  background-color: #fff8f3;
-  padding: 72px 24px 64px;
+export const Hero = styled.section`
+  background-image: url("/fundo.png");
+  background-repeat: repeat;
+  padding: 32px 24px 48px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 `;
 
-export const HeroTitle = styled.h1`
-  font-size: clamp(28px, 4vw, 40px);
+export const HeroLogo = styled.img`
+  height: 48px;
+  object-fit: contain;
+`;
+
+export const HeroTitulo = styled.h2`
+  font-size: clamp(22px, 3.5vw, 36px);
   font-weight: 900;
   color: #e66767;
   margin: 0;
-  line-height: 1.3;
+  margin-top: 100px;
+  line-height: 1.4;
 `;
 
-export const DestaqueSection = styled.section`
+export const MainSection = styled.section`
+  background-color: #FFF8F2;
+  padding: 56px 24px 80px;
+`;
+
+export const RestaurantesGrid = styled.div`
   max-width: 960px;
   margin: 0 auto;
-  padding: 48px 24px 0;
-`;
-
-export const SectionTitle = styled.h2`
-  font-size: 20px;
-  font-weight: 700;
-  color: #4b4b4b;
-  margin: 0 0 32px;
-  text-align: center;
-`;
-
-export const PratosGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
 
   @media (max-width: 640px) {
     grid-template-columns: 1fr;
-  }
-`;
-
-export const CtaSection = styled.section`
-  text-align: center;
-  padding: 48px 24px 0;
-`;
-
-export const CtaButton = styled(Link)`
-  display: inline-block;
-  padding: 14px 44px;
-  background-color: #e66767;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: opacity 0.2s;
-  font-family: inherit;
-
-  &:hover {
-    opacity: 0.85;
   }
 `;

@@ -61,7 +61,7 @@ export const pratos: Prato[] = [
   },
   {
     id: 6,
-    nome: "Burger Smash MyFood",
+    nome: "Burger Smash efood",
     categoria: "Americana",
     avaliacao: 4.7,
     destaqueSemana: true,

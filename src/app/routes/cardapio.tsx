@@ -14,8 +14,8 @@ import {
 
 export function meta() {
   return [
-    { title: "Cardápio — MyFood" },
-    { name: "description", content: "Conheça todos os pratos do MyFood." },
+    { title: "Cardápio — efood" },
+    { name: "description", content: "Conheça todos os pratos do efood." },
   ];
 }
 
